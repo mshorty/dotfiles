@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+import datetime
+from datetime import date
+template = """# {date}
+
+## Todo | +WEEK
+
+## Notes"""
+
+today = (datetime.date.today() if len(sys.argv) < 2
+        else sys.argv[1].rsplit(".", 1)[0].rsplit("/", 1)[1])
+
+print(template.format(date=today))
